@@ -1,3 +1,4 @@
+const PrimaryHeader = document.querySelector(".primary-header");
 const navToggle = document.querySelector(".mobile-nav-toggle");
 const primaryNav = document.querySelector(".primary-navigation");
 
@@ -6,4 +7,16 @@ navToggle.addEventListener("click", () => {
         ? navToggle.setAttribute("aria-expanded", false)
         : navToggle.setAttribute("aria-expanded", true);
     primaryNav.toggleAttribute("data-visible");
+    PrimaryHeader.toggleAttribute("data-overlay");
+});
+
+const slider = new A11YSlider(document.querySelector('.slider'), {
+    adaptiveHeight: true,
+    dots: true,
+    arrows: false,
+    responsive: {
+        480: {
+            dots: false // dots enabled 480px and up
+        }
+    }
 });
